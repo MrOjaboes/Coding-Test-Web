@@ -6,7 +6,7 @@
       <div class="row align-items-end justify-content-center text-center">
         <div class="col-lg-7">
           <h2 class="mb-0">Login Page</h2>
-           
+
         </div>
       </div>
     </div>
@@ -22,10 +22,21 @@
     <div class="col-md-6 text-center">
 
         @if (session()->has('message'))
+        <div class="alert alert-success alert-dismissible fade show px-2 py-2"
+            role="alert" style="background-color:green;color:white;">
+            <strong><i class="fas fa-check-circle"></i></strong>
+            {{ session()->get('message') }}
+            <button type="button" class="close" data-dismiss="alert"
+                aria-label="Close">
+                <span style="color:white;" aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+        @if (session()->has('errorMessage'))
         <div class="alert alert-danger alert-dismissible fade show px-2 py-2"
             role="alert" style="background-color:brown;color:white;">
             <strong><i class="fas fa-check-circle"></i></strong>
-            {{ session()->get('message') }}
+            {{ session()->get('errorMessage') }}
             <button type="button" class="close" data-dismiss="alert"
                 aria-label="Close">
                 <span style="color:white;" aria-hidden="true">&times;</span>

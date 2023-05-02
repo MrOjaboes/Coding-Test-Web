@@ -56,7 +56,7 @@ class LoginController extends Controller
                 return redirect()->route('home');
             }
         } else {
-            return redirect()->route('login')->with('message', 'Email And Password Do not Match.');
+            return redirect()->route('login')->with('errorMessage', 'Email And Password Do not Match.');
         }
     }
 
